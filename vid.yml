@@ -44,16 +44,16 @@
         state=present
         create=true
       with_items:
-        - { regexp: '^roderik', line: 'roderik ALL=(ALL) NOPASSWD: ALL' }
+        - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
 
   roles:
     - profile-all
     - profile-developer
 
   vars:
-    - computername: spectr
-    - git_user_name: Roderik van der Veer
-    - git_user_email: roderik.van.der.veer@kunstmaan.be
+    - computername: padraig
+    - git_user_name: Vid Rowan
+    - git_user_email: vid@uoregon.edu
     - php_version: 70
     - sublime_packages:
         - dest: "SideBarEnhancements"
