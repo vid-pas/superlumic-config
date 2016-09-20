@@ -16,9 +16,10 @@
     - watch
     - rsync
     - dinghy
-    - docker
-    - docker-machine
-    - docker-machine-driver-xhyve
+    - docker-tollbox
+    #- docker
+    #- docker-machine
+    #- docker-machine-driver-xhyve
 
 - name: install developer cask applications
   homebrew_cask: name={{item}} state=present
@@ -28,6 +29,7 @@
     - java
     - iterm2-beta
     
-- name: set xhyve permissions
-  shell: chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve && chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
-  become: yes
+# Not using docker xhyve
+#- name: set xhyve permissions
+#  shell: chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve && chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+#  become: yes
