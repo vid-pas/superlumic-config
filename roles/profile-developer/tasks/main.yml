@@ -16,7 +16,6 @@
     - watch
     - rsync
     - dinghy
-    - docker-tollbox
     #- docker
     #- docker-machine
     #- docker-machine-driver-xhyve
@@ -24,6 +23,7 @@
 - name: install developer cask applications
   homebrew_cask: name={{item}} state=present
   with_items:
+    - docker-tollbox
     - phpstorm
     - sequel-pro
     - java
