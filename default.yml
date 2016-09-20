@@ -1,13 +1,16 @@
 ---
 
-- hosts: 127.0.0.1
+- hosts: localhost
   connection: local
 
   tasks:
+    - name: install node
+      homebrew: name={{item}} state=latest
+      with_items:
+        - node
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
-        - spotify
         - istat-menus
         - dropbox
         - kaleidoscope
@@ -15,6 +18,14 @@
         - sonos
         - tower
         - superduper
+        - google-chrome
+        - keepingyouawake
+        - atom
+        - bartender
+        - omnigraffle
+        - microsoft-office
+        - sketch
+        - adobe-illustrator-cc
     - name: create ssh directory
       become: yes
       file:
@@ -55,7 +66,7 @@
     #### Update personal information here
     - computername: spectr
     - git_user_name: Roderik van der Veer
-    - git_user_email: roderik.van.der.veer@kunstmaan.be
+    - git_user_email: roderik@settlemint.io
     - php_version: 70
     - sublime_packages:
         - dest: "SideBarEnhancements"
@@ -82,8 +93,8 @@
         - dest: "Ansible"
           repo: "https://github.com/clifford-github/sublime-ansible.git"
           version: "master"
-    - sublime_text_color_scheme: "Packages/Base16/base16-eighties.light.tmTheme"
-    - sublime_text_theme: "Soda Light 3.sublime-theme"
+    - sublime_text_color_scheme: "Packages/Base16/base16-eighties.dark.tmTheme"
+    - sublime_text_theme: "Soda Dark 3.sublime-theme"
     - osx_defaults:
       - domain: 'com.apple.dock'
         key: 'autohide'
