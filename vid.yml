@@ -8,8 +8,8 @@
       homebrew_cask: name={{item}} state=present
       with_items:
         # adobe
-        - adobe-acrobat
-        - adobe-bridge-cc
+        # - adobe-acrobat # 2016/09/20 - Download failed on Cask 'adobe-bridge-cc' with message: Download failed: http://trials3.adobe.com/AdobeProducts/KBRG/6/osx10/Bridge_6_LS20.dmg
+        # - adobe-bridge-cc
         #- adobe-illustrator-cc
         #- adobe-indesign-cc
         #- adobe-photoshop-cc
