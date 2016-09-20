@@ -7,14 +7,54 @@
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
-        - spotify
-        - istat-menus
-        - dropbox
-        - kaleidoscope
-        - hazel
-        - sonos
-        - tower
-        - superduper
+        # adobe
+        - adobe-acrobat
+        - adobe-bridge-cc
+        #- adobe-illustrator-cc
+        #- adobe-indesign-cc
+        #- adobe-photoshop-cc
+        - adobe-reader
+        # browsers
+        - firefox
+        - google-chrome
+        # chat
+        - adium
+        # code
+        - atom
+        # communication
+        - skype
+        # diff
+        - diffmerge
+        # git
+        - gitx
+        - sourcetree
+        # cross-computer functionality
+        - airserver
+        - synergy
+        # development
+        - docker-toolbox
+        - mamp
+        # happy eyes
+        - flux
+        # java
+        - java
+        # music
+        - amazon-music
+        # sftp
+        - transmit
+        # tools
+        - onyx
+        # quicklook plugins
+        - animated-gif-quicklook
+        - qlcolorcode
+        - qlstephen
+        - qlmarkdown
+        - quicklook-json
+        - qlprettypatch
+        - quicklook-csv
+        - betterzipql
+        - webpquicklook
+        - suspicious-package
     - name: create ssh directory
       become: yes
       file:
