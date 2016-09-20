@@ -1,9 +1,13 @@
 ---
 
-- hosts: 127.0.0.1
+- hosts: localhost
   connection: local
 
   tasks:
+    - name: install node
+      homebrew: name={{item}} state=latest
+      with_items:
+        - node
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
@@ -40,6 +44,8 @@
         - java
         # music
         - amazon-music
+        # office
+        - microsoft-office
         # sftp
         - transmit
         # tools
@@ -75,6 +81,7 @@
       copy:
         src: files/ssh_config
         dest: /etc/ssh/ssh_config
+    #### Uncomment the following lines on your username.yml file, replacing 'roderik' with your username to add to sudoers without password
     - name: add to sudoers without password
       become: yes
       lineinfile: >
@@ -91,6 +98,7 @@
     - profile-developer
 
   vars:
+    #### Update personal information here
     - computername: padraig
     - git_user_name: Vid Rowan
     - git_user_email: vid@uoregon.edu
