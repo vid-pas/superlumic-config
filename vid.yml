@@ -33,6 +33,7 @@
         - gitx
         - sourcetree
         # cross-computer functionality
+        - airdisplay
         - airserver
         - synergy
         # development
