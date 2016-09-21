@@ -175,6 +175,11 @@
         key: 'FXPreferredViewStyle'
         type: string
         value: "clmv"
+      # show hidden files  defaults write com.apple.finder AppleShowAllFiles YES
+      - domain: 'com.apple.finder'
+        key: 'AppleShowAllFiles'
+        type: boolean
+        value: true
       - domain: 'NSGlobalDomain'
         key: 'NSNavPanelExpandedStateForSaveMode'
         type: boolean
