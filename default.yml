@@ -11,21 +11,57 @@
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
-        - istat-menus
-        - dropbox
-        - kaleidoscope
-        - hazel
-        - sonos
-        - tower
-        - superduper
+        # adobe
+        # - adobe-acrobat # 2016/09/20 - Download failed on Cask 'adobe-bridge-cc' with message: Download failed: http://trials3.adobe.com/AdobeProducts/KBRG/6/osx10/Bridge_6_LS20.dmg
+        # - adobe-bridge-cc
+        #- adobe-illustrator-cc
+        #- adobe-indesign-cc
+        #- adobe-photoshop-cc
+        - adobe-reader
+        # browsers
+        - firefox
         - google-chrome
-        - keepingyouawake
+        # chat
+        - adium
+        # code
         - atom
-        - bartender
-        - omnigraffle
-        - microsoft-office
-        - sketch
-        - adobe-illustrator-cc
+        # communication
+        - skype
+        # diff
+        - diffmerge
+        # git
+        - gitx
+        - sourcetree
+        # cross-computer functionality
+        - airdisplay
+        - airserver
+        - synergy
+        # development
+        - docker-toolbox
+        - mamp
+        # happy eyes
+        - flux
+        # java
+        - java
+        # music
+        - amazon-music
+        # office
+        # - microsoft-office #2016-09-20 Download failed on Cask 'microsoft-office' with message: Download failed: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_15.26.0_160910_Installer.pkg
+        # sftp
+        - transmit
+        # tools
+        - onyx
+        # quicklook plugins
+        - animated-gif-quicklook
+        - qlcolorcode
+        - qlstephen
+        - qlmarkdown
+        - quicklook-json
+        - qlprettypatch
+        - quicklook-csv
+        - betterzipql
+        - webpquicklook
+        - suspicious-package
     - name: create ssh directory
       become: yes
       file:
@@ -47,16 +83,16 @@
         src: files/ssh_config
         dest: /etc/ssh/ssh_config
     #### Uncomment the following lines on your username.yml file, replacing 'roderik' with your username to add to sudoers without password
-    #- name: add to sudoers without password
-    #  become: yes
-    #  lineinfile: >
-    #    dest=/etc/sudoers
-    #    regexp="{{ item.regexp }}"
-    #    line="{{ item.line }}"
-    #    state=present
-    #    create=true
-    #  with_items:
-    #    - { regexp: '^roderik', line: 'roderik ALL=(ALL) NOPASSWD: ALL' }
+    - name: add to sudoers without password
+      become: yes
+      lineinfile: >
+        dest=/etc/sudoers
+        regexp="{{ item.regexp }}"
+        line="{{ item.line }}"
+        state=present
+        create=true
+      with_items:
+        - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
 
   roles:
     - profile-all
@@ -64,9 +100,9 @@
 
   vars:
     #### Update personal information here
-    - computername: spectr
-    - git_user_name: Roderik van der Veer
-    - git_user_email: roderik@settlemint.io
+    - computername: padraig
+    - git_user_name: Vid Rowan
+    - git_user_email: vid@uoregon.edu
     - php_version: 70
     - sublime_packages:
         - dest: "SideBarEnhancements"
@@ -111,7 +147,7 @@
       - domain: 'com.apple.dock'
         key: 'orientation'
         type: string
-        value: left
+        value: bottom
       - domain: 'NSGlobalDomain'
         key: 'NSTableViewDefaultSizeMode'
         type: integer
@@ -140,6 +176,27 @@
         key: 'FXPreferredViewStyle'
         type: string
         value: "clmv"
+      # reverse horizontal scroll #requires a restart or kill / restart cfprefsd
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.swipescrolldirection'
+        type: boolean
+        value: false
+      # show hidden files  defaults write com.apple.finder AppleShowAllFiles YES
+      # TODO add killall Finder /System/Library/CoreServices/Finder.app
+      - domain: 'com.apple.finder'
+        key: 'AppleShowAllFiles'
+        type: boolean
+        value: true
+      # finder- search "When performing a search, search the current folder by default" 
+      - domain: 'com.apple.finder'
+        key 'FXDefaultSearchScope'
+        type: string
+        value: "SCcf"
+      # Use Keyboard - Use all F1, F@, etc. keys as standard functions keys defaults write -g com.apple.keyboard.fnState -bool true
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.keyboard.fnState'
+        type: boolean
+        value: true
       - domain: 'NSGlobalDomain'
         key: 'NSNavPanelExpandedStateForSaveMode'
         type: boolean
@@ -167,7 +224,7 @@
       - domain: 'com.apple.desktopservices'
         key: 'DSDontWriteNetworkStores'
         type: boolean
-        value: true
+        value: false
       - domain: 'com.apple.print.PrintingPrefs'
         key: 'Quit When Finished'
         type: boolean
