@@ -175,7 +175,13 @@
         key: 'FXPreferredViewStyle'
         type: string
         value: "clmv"
+      # reverse horizontal scroll
+      - domain: 'com.apple.driver.AppleHIDMouse'
+        key: 'ScrollV'
+        type: integer
+        value: 0
       # show hidden files  defaults write com.apple.finder AppleShowAllFiles YES
+      # TODO add killall Finder /System/Library/CoreServices/Finder.app
       - domain: 'com.apple.finder'
         key: 'AppleShowAllFiles'
         type: boolean
