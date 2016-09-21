@@ -175,17 +175,22 @@
         key: 'FXPreferredViewStyle'
         type: string
         value: "clmv"
-      # reverse horizontal scroll
-      - domain: 'com.apple.driver.AppleHIDMouse'
-        key: 'ScrollV'
-        type: integer
-        value: 0
+      # reverse horizontal scroll #requires a restart or kill / restart cfprefsd
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.swipescrolldirection'
+        type: boolean
+        value: false
       # show hidden files  defaults write com.apple.finder AppleShowAllFiles YES
       # TODO add killall Finder /System/Library/CoreServices/Finder.app
       - domain: 'com.apple.finder'
         key: 'AppleShowAllFiles'
         type: boolean
         value: true
+        # finder- search "When performing a search, search the current folder by default" 
+        - domain: 'com.apple.finder'
+        key 'FXDefaultSearchScope'
+        type: string
+        value: "SCcf"
       - domain: 'NSGlobalDomain'
         key: 'NSNavPanelExpandedStateForSaveMode'
         type: boolean
