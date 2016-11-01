@@ -11,5 +11,5 @@ galaxy_info:
   categories:
     - system
 dependencies:
-  - vid-uo.superlumic-computername
-  - vid-uo.superlumic-cli
+  - vid.superlumic-computername
+  - vid.superlumic-cli
