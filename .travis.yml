@@ -7,4 +7,4 @@ os:
 osx_image: xcode7
 
 script:
-  - curl -s https://raw.githubusercontent.com/superlumic/superlumic/master/superlumic | bash -s
+  - curl -s https://raw.githubusercontent.com/vid-uo/superlumic/master/superlumic | bash -s
