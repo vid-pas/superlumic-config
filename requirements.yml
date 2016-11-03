@@ -1,37 +1,37 @@
 ---
 
 - src: https://github.com/vid-uo/ansible-role-homebrew.git
-  name: vid.superlumic-uo-homebrew
+  name: vid.superlumic-homebrew
 
 - src: https://github.com/vid-uo/ansible-role-osx-defaults.git
-  name: vid.superlumic-uo-osx-defaults
+  name: vid.superlumic-osx-defaults
 
 - src: https://github.com/vid-uo/ansible-role-computername.git
-  name: vid.superlumic-uo-computername
+  name: vid.superlumic-computername
 
 - src: https://github.com/vid-uo/ansible-role-cli.git
-  name: vid.superlumic-uo-cli
+  name: vid.superlumic-cli
 
 - src: https://github.com/vid-uo/ansible-role-mysql.git
-  name: vid.superlumic-uo-mysql
+  name: vid.superlumic-mysql
 
 - src: https://github.com/vid-uo/ansible-role-php.git
-  name: vid.superlumic-uo-php
+  name: vid.superlumic-php
 
 - src: https://github.com/vid-uo/ansible-role-sublimetext.git
-  name: vid.superlumic-uo-sublimetext
+  name: vid.superlumic-sublimetext
 
 - src: https://github.com/vid-uo/ansible-role-node.git
-  name: vid.superlumic-uo-node
+  name: vid.superlumic-node
 
 - src: https://github.com/vid-uo/ansible-role-postgresql.git
-  name: vid.superlumic-uo-postgresql
+  name: vid.superlumic-postgresql
 
 - src: https://github.com/vid-uo/ansible-role-vim.git
-  name: vid.superlumic-uo-vim
+  name: vid.superlumic-vim
 
 - src: https://github.com/vid-uo/ansible-role-modjk.git
-  name: vid.superlumic-uo-modjk
+  name: vid.superlumic-modjk
 
 - src: https://github.com/vid-uo/ansible-role-skylab.git
-  name: vid.superlumic-uo-skylab
+  name: vid.superlumic-skylab
