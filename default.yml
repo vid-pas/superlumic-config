@@ -29,8 +29,8 @@
         - skype
         # diff
         - diffmerge
-        # git
-        - gitx
+        # rowanj-gitx swapped for gitx - 2016-11=03 not compatible w/ osX 10.12.
+        - rowanj-gitx
         - sourcetree
         # cross-computer functionality
         - airdisplay
@@ -187,7 +187,7 @@
         key: 'AppleShowAllFiles'
         type: boolean
         value: true
-      # finder- search "When performing a search, search the current folder by default" 
+      # finder- search "When performing a search, search the current folder by default"
       - domain: 'com.apple.finder'
         key 'FXDefaultSearchScope'
         type: string
