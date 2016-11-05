@@ -23,6 +23,7 @@
         - google-chrome
         # chat
         - adium
+        - telegram
         # code
         - atom
         # communication
@@ -39,6 +40,8 @@
         # development
         - docker-toolbox
         - docker
+        # X11 for running GUI apps in Docker
+        - xquartz
         - mamp
         # happy eyes
         - flux
