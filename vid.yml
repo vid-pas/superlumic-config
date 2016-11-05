@@ -140,10 +140,11 @@
         key: 'autohide'
         type: boolean
         value: true
-      - domain: 'com.apple.dock'
-        key: 'persistent-apps'
-        type: array
-        value:
+      # Currently arrays are not supported
+      #- domain: 'com.apple.dock'
+      #  key: 'persistent-apps'
+      #  type: array
+      #  value:
       - domain: 'com.apple.dock'
         key: 'minimize-to-application'
         type: integer
