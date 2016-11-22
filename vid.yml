@@ -173,10 +173,11 @@
         key: 'InitialKeyRepeat'
         type: integer
         value: 15
-      - domain: 'com.apple.menuextra.clock'
-        key: 'DateFormat'
-        type: string
-        value: EEE MMM d  HH:mm
+      # No 24 hour clock style
+      #- domain: 'com.apple.menuextra.clock'
+      #  key: 'DateFormat'
+      #  type: string
+      #  value: EEE MMM d  HH:mm
       - domain: 'com.apple.menuextra.battery'
         key: 'ShowPercent'
         type: string
