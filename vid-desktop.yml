@@ -1,0 +1,4 @@
+---
+# chain vid.yml but set custom variable: computername
+
+- include: vid.yml computername=padraig-imac
