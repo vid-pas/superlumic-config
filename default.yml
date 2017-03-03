@@ -8,6 +8,10 @@
       homebrew: name={{item}} state=latest
       with_items:
         - node
+    - name: install tree
+      homebrew: name={{item}} state=latest
+      with_items:
+        - tree
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
