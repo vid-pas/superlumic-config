@@ -13,8 +13,9 @@
       with_items:
           - trash
     - name: install dockutil
-      homebrew: name={{item}} state=latest
-          - dockutil
+      shell: brew install {{item}}
+      with_items:
+        - dockutil
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
