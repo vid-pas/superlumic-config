@@ -55,6 +55,8 @@
         - amazon-music
         # office
         # - microsoft-office #2016-09-20 Download failed on Cask 'microsoft-office' with message: Download failed: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_15.26.0_160910_Installer.pkg
+        # rdp
+        - microsoft-remote-desktop-beta
         # sftp
         - transmit
         # tools
