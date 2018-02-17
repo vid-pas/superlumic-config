@@ -12,6 +12,9 @@
       homebrew: name={{item}} state=latest
       with_items:
           - trash
+    - name: install dockutil
+      homebrew: name={{item}} state=latest
+          - dockutil
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
@@ -59,8 +62,6 @@
         - microsoft-remote-desktop-beta
         # sftp
         - transmit
-        # dock
-        - dockutil
         # tools
         - onyx
         # quicklook plugins
