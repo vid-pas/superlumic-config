@@ -21,7 +21,7 @@
         #- adobe-illustrator-cc
         #- adobe-indesign-cc
         #- adobe-photoshop-cc
-        - adobe-reader
+        - adobe-acrobat-reader  
         # browsers
         - firefox
         - google-chrome
@@ -64,14 +64,14 @@
         # tools
         - onyx
         # quicklook plugins
-        - animated-gif-quicklook
+        #- animated-gif-quicklook
         - qlcolorcode
         - qlstephen
         - qlmarkdown
         - quicklook-json
         - qlprettypatch
         - quicklook-csv
-        - betterzipql
+        #- betterzipql
         - webpquicklook
         - suspicious-package
     #- name: create ssh directory
@@ -118,6 +118,24 @@
     - name: Fix order
       shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
       with_items: dockitems_to_persist
+      
+    - name: Get current Terminal profile.
+      shell: defaults read com.apple.Terminal 'Default Window Settings'
+      register: terminal_theme
+      changed_when: false
+
+    - name: Ensure custom Terminal profile is added.
+      shell: open ~/git_bash_files/Homebrew_Vid.terminal
+      changed_when: false
+      when: "'Homebrew_Vid' not in terminal_theme.stdout"
+
+    - name: Ensure custom Terminal profile is set as default.
+      shell: "{{ item }}"
+      with_items:
+        - defaults write com.apple.Terminal 'Default Window Settings' -string 'Homebrew_Vid'
+        - defaults write com.apple.Terminal 'Startup Window Settings' -string 'Homebrew_Vid'
+      changed_when: false
+      when: "'Homebrew_Vid' not in terminal_theme.stdout"
 
   roles:
     - profile-all
