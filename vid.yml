@@ -59,6 +59,8 @@
         - microsoft-remote-desktop-beta
         # sftp
         - transmit
+        # dock
+        - dockutil
         # tools
         - onyx
         # quicklook plugins
@@ -72,26 +74,26 @@
         - betterzipql
         - webpquicklook
         - suspicious-package
-    - name: create ssh directory
-      become: yes
-      file:
-        path: "{{item}}"
-        state: directory
-        owner: root
-        group: wheel
-        mode: 0777
-      with_items:
-        - /etc/ssh
-    - name: personal ssh config
-      become: yes
-      copy:
-        src: files/ssh_config
-        dest: /etc/ssh_config
-    - name: personal ssh config in another location
-      become: yes
-      copy:
-        src: files/ssh_config
-        dest: /etc/ssh/ssh_config
+    #- name: create ssh directory
+    #  become: yes
+    #  file:
+    #    path: "{{item}}"
+    #    state: directory
+    #    owner: root
+    #    group: wheel
+    #    mode: 0777
+    #  with_items:
+    #    - /etc/ssh
+    #- name: personal ssh config
+    #  become: yes
+    #  copy:
+    #    src: files/ssh_config
+    #    dest: /etc/ssh_config
+    #- name: personal ssh config in another location
+    #  become: yes
+    #  copy:
+    #    src: files/ssh_config
+    #    dest: /etc/ssh/ssh_config
     #### Uncomment the following lines on your username.yml file, replacing 'roderik' with your username to add to sudoers without password
     - name: add to sudoers without password
       become: yes
@@ -103,6 +105,19 @@
         create=true
       with_items:
         - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
+    ### Dock mgmt
+    - name: Remove all cruft from Dock
+      shell: dockutil --remove '{{ item }}'
+      ignore_errors: true
+      with_items: dockitems_to_remove
+
+    - name: Check if items in dock exist
+      shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
+      with_items: dockitems_to_persist
+
+    - name: Fix order
+      shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
+      with_items: dockitems_to_persist
 
   roles:
     - profile-all
@@ -114,6 +129,38 @@
     - git_user_name: Vid Rowan
     - git_user_email: vid@uoregon.edu
     - php_version: 70
+    - dockitems_to_remove:
+      - Launchpad
+      - Mail
+      - Safari
+      - Contacts
+      - Notes
+      - Reminders
+      - Maps
+      - Photos
+      - Messages
+      - FaceTime
+      - iTunes
+      - iBooks
+      - App Store
+      - System Preferences
+      - Calendar
+    - dockitems_to_persist:
+      - name: Firefox
+        path: "/Applications/Firefox.app"
+        pos: 1
+      - name: Google Chrome
+        path: "/Applications/Google Chrome.app"
+        pos: 2
+      - name: Terminal
+        path: /Applications/Utilities/Terminal.app
+        pos: 3
+      - name: Atom
+        path: /Applications/Atom.app
+        pos: 4
+      - name: Adium
+        path: /Applications/Adium.app
+        pos: 5
     - sublime_packages:
         - dest: "SideBarEnhancements"
           repo: "https://github.com/titoBouzout/SideBarEnhancements"
