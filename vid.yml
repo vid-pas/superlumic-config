@@ -144,8 +144,8 @@
   vars:
     #### Update personal information here
     - computername: padraig
-    - git_user_name: Vid Rowan
-    - git_user_email: vid@uoregon.edu
+    - git_user_name: "Vid Rowan"
+    - git_user_email: "vid@uoregon.edu"
     - php_version: 70
     - dockitems_to_remove:
       - Launchpad
