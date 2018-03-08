@@ -16,8 +16,8 @@
 - name: install developer cask applications
   homebrew_cask: name={{item}} state=present
   with_items:
-    - docker-toolbox
-    - phpstorm
-    - webstorm
+    #- docker-toolbox # for older Macs
+    #- phpstorm
+    #- webstorm
     - sequel-pro
     - java
