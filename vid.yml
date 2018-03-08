@@ -18,6 +18,7 @@
         - dockutil
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
+      ignore_errors: yes
       with_items:
         # adobe
         # - adobe-acrobat # 2016/09/20 - Download failed on Cask 'adobe-bridge-cc' with message: Download failed: http://trials3.adobe.com/AdobeProducts/KBRG/6/osx10/Bridge_6_LS20.dmg
