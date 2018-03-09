@@ -16,6 +16,8 @@
       shell: brew install {{item}}
       with_items:
         - dockutil
+        # json from commandline
+        - jq
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       ignore_errors: yes
