@@ -16,8 +16,15 @@
       shell: brew install {{item}}
       with_items:
         - dockutil
+    - name: install json_stuff
+      shell: brew install {{item}}
+      with_items:
         # json from commandline
         - jq
+    - name: install tree
+      shell: brew install {{item}}
+      with_items:
+        - tree
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       ignore_errors: yes
