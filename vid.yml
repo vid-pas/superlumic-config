@@ -65,6 +65,8 @@
         - flux
         # java
         - java
+        # local dev docker container
+        #- lando
         # music
         #- amazon-music
         # office
