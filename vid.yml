@@ -58,8 +58,8 @@
         # development
         #- docker-toolbox # For older Macs
         - docker
-        # X11 for running GUI apps in Docker
-        - xquartz
+        # X11 for running GUI apps in Docker # actually need v 2.7.10: https://www.xquartz.org/releases/XQuartz-2.7.10.html
+        - xquartz 
         #- mamp
         # happy eyes
         - flux
