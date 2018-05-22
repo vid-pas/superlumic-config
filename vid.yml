@@ -25,6 +25,11 @@
       shell: brew install {{item}}
       with_items:
         - tree
+    - name: install socat
+      # for docker gui apps: https://github.com/vidrowan/docker-tips/tree/master/x11
+      shell: brew install {{item}}
+      with_items:
+        - socat
     - name: install yarn
       shell: brew install {{item}}
       with_items:
