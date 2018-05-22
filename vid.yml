@@ -48,6 +48,8 @@
         - skype
         # diff
         - diffmerge
+        # sqlite
+        - db-browser-for-sqlite
         # rowanj-gitx swapped for gitx - 2016-11=03 not compatible w/ osX 10.12.
         - rowanj-gitx
         - sourcetree
