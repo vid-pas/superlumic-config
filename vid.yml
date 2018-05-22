@@ -30,6 +30,11 @@
       shell: brew install {{item}}
       with_items:
         - socat
+    - name: install yarn
+      shell: brew install {{item}}
+      with_items:
+        # npm alternative
+        - yarn
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       ignore_errors: yes
@@ -53,23 +58,26 @@
         - skype
         # diff
         - diffmerge
+        # sqlite
+        - db-browser-for-sqlite
         # rowanj-gitx swapped for gitx - 2016-11=03 not compatible w/ osX 10.12.
         - rowanj-gitx
         - sourcetree
         # cross-computer functionality
-        - airdisplay
         - airserver
         - synergy
         # development
         #- docker-toolbox # For older Macs
         - docker
-        # X11 for running GUI apps in Docker
-        - xquartz
+        # X11 for running GUI apps in Docker # actually need v 2.7.10: https://www.xquartz.org/releases/XQuartz-2.7.10.html
+        - xquartz 
         #- mamp
         # happy eyes
         - flux
         # java
         - java
+        # local dev docker container
+        #- lando
         # music
         #- amazon-music
         # office
