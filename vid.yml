@@ -25,6 +25,11 @@
       shell: brew install {{item}}
       with_items:
         - tree
+    - name: install yarn
+      shell: brew install {{item}}
+      with_items:
+        # npm alternative
+        - yarn
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       ignore_errors: yes
