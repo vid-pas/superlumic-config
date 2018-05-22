@@ -109,7 +109,7 @@
         state=present
         create=true
       with_items:
-        - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
+        - { regexp: '^dallinchristensen', line: 'dallinchristensen ALL=(ALL) NOPASSWD: ALL' }
     - name: Remove all cruft from Dock
       shell: dockutil --remove all
     - name: Check if items in dock exist
@@ -120,21 +120,6 @@
       with_items: "{{ dockitems_to_persist }}"
     - name: Reload Prefs
       shell: killall cfprefsd
-    - name: Get current Terminal profile.
-      shell: defaults read com.apple.Terminal 'Default Window Settings'
-      register: terminal_theme
-      changed_when: false
-    - name: Ensure custom Terminal profile is added.
-      shell: open $HOME/git_bash_files/Homebrew_Vid.terminal
-      changed_when: false
-      when: "'Homebrew_Vid' not in terminal_theme.stdout"
-    - name: Ensure custom Terminal profile is set as default.
-      shell: "{{ item }}"
-      with_items:
-        - defaults write com.apple.Terminal 'Default Window Settings' -string 'Homebrew_Vid'
-        - defaults write com.apple.Terminal 'Startup Window Settings' -string 'Homebrew_Vid'
-      changed_when: false
-      when: "'Homebrew_Vid' not in terminal_theme.stdout"
 
   roles:
     - profile-all
