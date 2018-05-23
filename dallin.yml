@@ -229,7 +229,7 @@
       - domain: 'NSGlobalDomain'
         key: 'com.apple.swipescrolldirection'
         type: boolean
-        value: false
+        value: true
       # show hidden files  defaults write com.apple.finder AppleShowAllFiles YES
       # TODO add killall Finder /System/Library/CoreServices/Finder.app
       - domain: 'com.apple.finder'
