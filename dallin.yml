@@ -50,7 +50,7 @@
         #- firefox #keeps failing "Error: It seems there is already an App at '/Applications/Firefox.app'."
         - google-chrome
         # chat
-        - adium
+        #- adium
         - telegram
         # code
         - atom
@@ -60,7 +60,7 @@
         - diffmerge
         # sqlite
         - db-browser-for-sqlite
-        # rowanj-gitx swapped for gitx - 2016-11=03 not compatible w/ osX 10.12.
+        # rowanj-gitx swapped for gitx - 2016-1-03 which was not compatible w/ osX 10.12.
         - rowanj-gitx
         - sourcetree
         # cross-computer functionality
@@ -144,8 +144,8 @@
       - name: "Atom"
         path: "/Applications/Atom.app"
         pos: 4
-      - name: "Adium"
-        path: "/Applications/Adium.app"
+      - name: "Telegram"
+        path: "/Applications/Telegram.app"
         pos: 5
     #- sublime_packages:
         #- dest: "SideBarEnhancements"
