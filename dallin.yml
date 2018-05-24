@@ -147,6 +147,10 @@
       - name: "Telegram"
         path: "/Applications/Telegram.app"
         pos: 5
+      # visual-studio-code
+      #- name: "<vsc>"
+      #  path: "/Applications/<vsc>.app"
+      #  pos: 6
     #- sublime_packages:
         #- dest: "SideBarEnhancements"
         #  repo: "https://github.com/titoBouzout/SideBarEnhancements"
