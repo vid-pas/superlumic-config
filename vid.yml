@@ -69,6 +69,7 @@
         # development
         #- docker-toolbox # For older Macs
         - docker
+        - kitematic
         # X11 for running GUI apps in Docker # actually need v 2.7.10: https://www.xquartz.org/releases/XQuartz-2.7.10.html
         - xquartz 
         #- mamp
@@ -77,7 +78,8 @@
         # java
         - java
         # local dev docker container
-        #- lando
+        - kalabox
+        - lando
         # music
         #- amazon-music
         # office
