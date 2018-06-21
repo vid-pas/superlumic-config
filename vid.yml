@@ -161,7 +161,10 @@
       - name: "Telegram"
         path: "/Applications/Telegram.app"
         pos: 5
-    #- sublime_packages:
+    #- atom_packages:
+        # sync-settings http://atom.io/packages/sync-settings
+        #TODO remind user to input gist info: GITHUB_TOKEN=6a10cc207b....7a67e871 GIST_ID=b3025...88c41c; Token found at: https://github.com/settings/tokens
+    #- sublime_packages: gists found: https://gist.github.com
         #- dest: "SideBarEnhancements"
         #  repo: "https://github.com/titoBouzout/SideBarEnhancements"
         #  version: "st3"
