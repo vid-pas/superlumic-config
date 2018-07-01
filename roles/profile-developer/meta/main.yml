@@ -16,6 +16,6 @@ dependencies:
   - vid.superlumic-homebrew
   #- vid.superlumic-php
   #- vid.superlumic-sublimetext
-  #- vid.superlumic-node
+  - vid.superlumic-node
   - vid.superlumic-vim
   - profile-all
