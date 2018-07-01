@@ -144,8 +144,8 @@
   vars:
     #### Update personal information here
     - computername: padraig
-    - git_user_name: "Vid Rowan"
-    - git_user_email: "vid.rowan@tbis.io"
+    - git_user_name: "Vid"
+    - git_user_email: "vid@nearlythreethings.com"
     #- php_version: 70
     - dockitems_to_persist:
       - name: "Firefox"
