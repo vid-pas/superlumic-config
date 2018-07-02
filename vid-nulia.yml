@@ -1,0 +1,19 @@
+---
+# chain vid.yml but set custom variable: computername
+
+- include: vid.yml computername=padraig git_user_name="vid-nulia" git_user_email="vid@nearlythreethings.com"
+
+- hosts: localhost
+  connection: local
+
+  tasks:
+  - name: add to sudoers without password
+    become: yes
+    lineinfile: >
+      dest=/etc/sudoers
+      regexp="{{ item.regexp }}"
+      line="{{ item.line }}"
+      state=present
+      create=true
+    with_items:
+      - { regexp: '^vid-nulia', line: 'vid-nulia ALL=(ALL) NOPASSWD: ALL' }
