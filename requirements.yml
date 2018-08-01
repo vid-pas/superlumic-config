@@ -1,37 +1,37 @@
 ---
 
-- src: https://github.com/vid-uo/ansible-role-homebrew.git
+- src: https://github.com/vid-n3t/ansible-role-homebrew.git
   name: vid.superlumic-homebrew
 
-- src: https://github.com/vid-uo/ansible-role-osx-defaults.git
+- src: https://github.com/vid-n3t/ansible-role-osx-defaults.git
   name: vid.superlumic-osx-defaults
 
-- src: https://github.com/vid-uo/ansible-role-computername.git
+- src: https://github.com/vid-n3t/ansible-role-computername.git
   name: vid.superlumic-computername
 
-- src: https://github.com/vid-uo/ansible-role-cli.git
+- src: https://github.com/vid-n3t/ansible-role-cli.git
   name: vid.superlumic-cli
 
-- src: https://github.com/vid-uo/ansible-role-mysql.git
+- src: https://github.com/vid-n3t/ansible-role-mysql.git
   name: vid.superlumic-mysql
 
-- src: https://github.com/vid-uo/ansible-role-php.git
+- src: https://github.com/vid-n3t/ansible-role-php.git
   name: vid.superlumic-php
 
-- src: https://github.com/vid-uo/ansible-role-sublimetext.git
+- src: https://github.com/vid-n3t/ansible-role-sublimetext.git
   name: vid.superlumic-sublimetext
 
-- src: https://github.com/vid-uo/ansible-role-node.git
+- src: https://github.com/vid-n3t/ansible-role-node.git
   name: vid.superlumic-node
 
-- src: https://github.com/vid-uo/ansible-role-postgresql.git
+- src: https://github.com/vid-n3t/ansible-role-postgresql.git
   name: vid.superlumic-postgresql
 
-- src: https://github.com/vid-uo/ansible-role-vim.git
+- src: https://github.com/vid-n3t/ansible-role-vim.git
   name: vid.superlumic-vim
 
-- src: https://github.com/vid-uo/ansible-role-modjk.git
+- src: https://github.com/vid-n3t/ansible-role-modjk.git
   name: vid.superlumic-modjk
 
-- src: https://github.com/vid-uo/ansible-role-skylab.git
+- src: https://github.com/vid-n3t/ansible-role-skylab.git
   name: vid.superlumic-skylab
