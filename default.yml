@@ -23,7 +23,6 @@
         #- adobe-indesign-cc
         #- adobe-photoshop-cc
         - adobe-reader
-        - atom
         #- bartender
         # browsers
         - firefox
@@ -34,6 +33,7 @@
         - atom
         # communication
         - skype
+        - slack
         # diff
         - diffmerge
         # gitx - rowanj-gitx swapped for gitx - 2016-11=03 not compatible w/ osX 10.12.
@@ -44,18 +44,18 @@
         - airserver
         - synergy
         # development
-        - docker-toolbox
+        - docker
         - mamp
         # happy eyes
         - flux
         # java
-        - java
+        #- java
         # music
         - amazon-music
         # office
         # - microsoft-office #2016-09-20 Download failed on Cask 'microsoft-office' with message: Download failed: https://officecdn.microsoft.com/pr/C1297A47-86C4-4C1F-97FA-950631F94777/OfficeMac/Microsoft_Office_2016_15.26.0_160910_Installer.pkg
         # sftp
-        - transmit
+        #- transmit
         # tools
         - onyx
         # quicklook plugins
@@ -103,26 +103,26 @@
         src: files/ssh_config
         dest: /etc/ssh/ssh_config
     #### Uncomment the following lines on your username.yml file, replacing 'roderik' with your username to add to sudoers without password
-    - name: add to sudoers without password
-      become: yes
-      lineinfile: >
-        dest=/etc/sudoers
-        regexp="{{ item.regexp }}"
-        line="{{ item.line }}"
-        state=present
-        create=true
-      with_items:
-        - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
+    #- name: add to sudoers without password
+    #  become: yes
+    #  lineinfile: >
+    #    dest=/etc/sudoers
+    #    regexp="{{ item.regexp }}"
+    #    line="{{ item.line }}"
+    #    state=present
+    #    create=true
+    #  with_items:
+    #    - { regexp: '^roderik', line: 'roderik ALL=(ALL) NOPASSWD: ALL' }
 
   roles:
     - profile-all
     - profile-developer
 
   vars:
-    #### Update personal information here
-    - computername: padraig
-    - git_user_name: Vid Rowan
-    - git_user_email: vid@uoregon.edu
+    #### Uncomment and Update personal information here
+    #- computername: 
+    #- git_user_name: 
+    #- git_user_email: 
     - osx_defaults:
       - domain: 'com.apple.dock'
         key: 'autohide'
