@@ -15,8 +15,8 @@
 - src: https://github.com/vid-n3t/ansible-role-mysql.git
   name: vid.superlumic-mysql
 
-- src: https://github.com/vid-n3t/ansible-role-php.git
-  name: vid.superlumic-php
+#- src: https://github.com/vid-n3t/ansible-role-php.git
+#  name: vid.superlumic-php
 
 - src: https://github.com/vid-n3t/ansible-role-sublimetext.git
   name: vid.superlumic-sublimetext
