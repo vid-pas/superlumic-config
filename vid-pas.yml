@@ -4,10 +4,12 @@
 - include: vid.yml computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com"
 
 # Add additional tasks for vid-pas
-tasks:
- - name: install personal cask applications
-      homebrew_cask: name={{item}} state=present
-      ignore_errors: yes
-      with_items:
-        # rdp
-        - microsoft-remote-desktop-beta
+- hosts: localhost
+  connection: local
+    tasks:
+      - name: install personal cask applications
+        homebrew_cask: name={{item}} state=present
+        ignore_errors: yes
+        with_items:
+          # rdp
+          - microsoft-remote-desktop-beta
