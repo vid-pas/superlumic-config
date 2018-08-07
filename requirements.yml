@@ -33,5 +33,5 @@
 - src: https://github.com/vid-n3t/ansible-role-modjk.git
   name: vid.superlumic-modjk
 
-- src: https://github.com/vid-n3t/ansible-role-skylab.git
-  name: vid.superlumic-skylab
+#- src: https://github.com/vid-n3t/ansible-role-skylab.git
+#  name: vid.superlumic-skylab
