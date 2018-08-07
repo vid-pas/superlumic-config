@@ -48,6 +48,7 @@
         - adobe-acrobat-reader  
         # browsers
         #- firefox #keeps failing "Error: It seems there is already an App at '/Applications/Firefox.app'."
+        - firefoxdeveloperedition
         - google-chrome
         # chat
         #- adium
