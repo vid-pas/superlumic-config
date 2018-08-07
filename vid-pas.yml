@@ -11,4 +11,4 @@
         - microsoft-remote-desktop-beta
 
 # chain vid.yml but set custom variables: computername, git user/email; and update sudo
-- include: vid.yml computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com" php_version="70"
+- include: vid.yml computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com" php_version="72"
