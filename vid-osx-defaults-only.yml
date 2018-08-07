@@ -1,0 +1,188 @@
+---
+
+- hosts: localhost
+  connection: local
+
+  tasks:
+  roles:
+    - profile-all
+
+  vars:
+    - dockitems_to_persist:
+      - name: "Firefox"
+        path: "/Applications/Firefox\ Developer\ Edition.app"
+        pos: 1
+      - name: "'Google\ Chrome'"
+        path: "'/Applications/Google\ Chrome.app'"
+        pos: 2
+      - name: "Terminal"
+        path: "/Applications/Utilities/Terminal.app"
+        pos: 3
+      - name: "Atom"
+        path: "/Applications/Atom.app"
+        pos: 4
+      - name: "Telegram"
+        path: "/Applications/Telegram.app"
+        pos: 5
+    - osx_defaults:
+      - domain: 'com.apple.dock'
+        key: 'autohide'
+        type: boolean
+        value: true
+      # Currently arrays are not supported
+      #- domain: 'com.apple.dock'
+      #  key: 'persistent-apps'
+      #  type: array
+      #  value:
+      - domain: 'com.apple.dock'
+        key: 'minimize-to-application'
+        type: integer
+        value: 1
+      - domain: 'com.apple.dock'
+        key: 'show-process-indicators'
+        type: boolean
+        value: true
+      - domain: 'com.apple.dock'
+        key: 'orientation'
+        type: string
+        value: bottom
+      - domain: 'NSGlobalDomain'
+        key: 'NSTableViewDefaultSizeMode'
+        type: integer
+        value: 1
+      - domain: 'com.apple.screencapture'
+        key: 'type'
+        type: string
+        value: png
+      - domain: 'NSGlobalDomain'
+        key: 'KeyRepeat'
+        type: integer
+        value: 2
+      - domain: 'NSGlobalDomain'
+        key: 'InitialKeyRepeat'
+        type: integer
+        value: 15
+      # No 24 hour clock style
+      #- domain: 'com.apple.menuextra.clock'
+      #  key: 'DateFormat'
+      #  type: string
+      #  value: EEE MMM d  HH:mm
+      - domain: 'com.apple.menuextra.battery'
+        key: 'ShowPercent'
+        type: string
+        value: 'YES'
+      - domain: 'com.apple.finder'
+        key: 'FXPreferredViewStyle'
+        type: string
+        value: "clmv"
+      # reverse horizontal scroll #requires a restart or kill / restart cfprefsd
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.swipescrolldirection'
+        type: boolean
+        value: false
+      # show hidden files  defaults write com.apple.finder AppleShowAllFiles YES
+      # TODO add killall Finder /System/Library/CoreServices/Finder.app
+      - domain: 'com.apple.finder'
+        key: 'AppleShowAllFiles'
+        type: boolean
+        value: true
+      - domain: 'com.apple.finder'
+        key: 'ShowStatusBar'
+        type: boolean
+        value: true
+      # Display full POSIX path as Finder window title
+      - domain: 'com.apple.finder'
+        key: '_FXShowPosixPathInTitle'
+        type: boolean
+        value: true
+      # finder- search "When performing a search, search the current folder by default"
+      - domain: 'com.apple.finder'
+        key: 'FXDefaultSearchScope'
+        type: string
+        value: "SCcf"
+      # Use column view in all Finder windows by default? (y/n)
+      - domain: 'com.apple.finder'
+        key: 'FXPreferredViewStyle'
+        type: string
+        value: "Clmv"
+      # show HD on desktop
+      - domain: 'com.apple.finder'
+        key: 'ShowExternalHardDrivesOnDesktop'
+        type: boolean
+        value: true
+      # Show file extentions
+      - domain: 'NSGlobalDomain'
+        key: 'AppleShowAllExtensions'
+        type: boolean
+        value: true
+      # Use Keyboard - Use all F1, F@, etc. keys as standard functions keys defaults write -g com.apple.keyboard.fnState -bool true
+      - domain: 'NSGlobalDomain'
+        key: 'com.apple.keyboard.fnState'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'NSAutomaticSpellingCorrectionEnabled'
+        type: boolean
+        value: false
+      # Disable auto-correct
+      - domain: 'NSGlobalDomain'
+        key: 'NSNavPanelExpandedStateForSaveMode'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'PMPrintingExpandedStateForPrint'
+        type: boolean
+        value: true
+      - domain: 'com.apple.dock'
+        key: 'tilesize'
+        type: float
+        value: 32
+      - domain: 'com.apple.dock'
+        key: 'autohide-time-modifier'
+        type: int
+        value: 0
+      - domain: 'com.apple.dock'
+        key: 'autohide-delay'
+        type: int
+        value: 0
+      - domain: 'NSGlobalDomain'
+        key: 'NSQuitAlwaysKeepsWindows'
+        type: boolean
+        value: false
+      - domain: 'com.apple.desktopservices'
+        key: 'DSDontWriteNetworkStores'
+        type: boolean
+        value: false
+      - domain: 'com.apple.print.PrintingPrefs'
+        key: 'Quit When Finished'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'IncludeInternalDebugMenu'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'IncludeDevelopMenu'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'WebKitDeveloperExtrasEnabledPreferenceKey'
+        type: boolean
+        value: true
+      - domain: 'com.apple.Safari'
+        key: 'com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled'
+        type: boolean
+        value: true
+      # Privacy: Don't send search queries to Apple
+      - domain: 'com.apple.Safari'
+        key: 'UniversalSearchEnabled'
+        type: boolean
+        value: false
+      - domain: 'com.apple.Safari'
+        key: 'SuppressSearchSuggestions'
+        type: boolean
+        value: true
+      - domain: 'NSGlobalDomain'
+        key: 'WebKitDeveloperExtras'
+        type: boolean
+        value: true
