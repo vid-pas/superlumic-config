@@ -153,7 +153,7 @@
     #- php_version: 70
     - dockitems_to_persist:
       - name: "Firefox"
-        path: "/Applications/Firefox.app"
+        path: "/Applications/Firefox\ Developer\ Edition.app"
         pos: 1
       - name: "'Google\ Chrome'"
         path: "'/Applications/Google\ Chrome.app'"
