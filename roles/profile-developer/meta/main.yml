@@ -14,7 +14,7 @@ dependencies:
   - vid.superlumic-computername
   - vid.superlumic-cli
   - vid.superlumic-homebrew
-  #- vid.superlumic-php
+  - vid.superlumic-php
   #- vid.superlumic-sublimetext
   - vid.superlumic-node
   - vid.superlumic-vim
