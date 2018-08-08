@@ -1,8 +1,4 @@
----
-
 - hosts: localhost
-  connection: local
-
   tasks:
     - name: add to sudoers without password
       become: yes
