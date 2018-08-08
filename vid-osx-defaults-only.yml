@@ -6,7 +6,8 @@
   tasks:
   
   roles:
-  
+    - profile-all
+   
   vars:
     - dockitems_to_persist:
       - name: "Firefox"
