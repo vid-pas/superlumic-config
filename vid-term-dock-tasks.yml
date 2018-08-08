@@ -9,6 +9,10 @@
 #    create=true
 #  with_items:
 #    - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
+- name: install dockutil
+  shell: brew install {{item}}
+  with_items:
+    - dockutil
 - name: Remove all cruft from Dock
   shell: dockutil --remove all
 - name: Check if items in dock exist
