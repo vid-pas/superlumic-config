@@ -9,6 +9,8 @@
       with_items:
         # rdp
         - microsoft-remote-desktop-beta
+        - google-chrome
+        - atom
     - name: Include additional task list
       include_tasks: vid-term-dock-tasks.yml
 
