@@ -38,3 +38,5 @@
     - defaults write com.apple.Terminal 'Startup Window Settings' -string 'Homebrew_Vid'
   changed_when: false
   when: "'Homebrew_Vid' not in terminal_theme.stdout"
+- name: Reload Finder
+  shell: killall Finder /System/Library/CoreServices/Finder.app
