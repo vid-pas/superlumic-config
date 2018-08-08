@@ -9,6 +9,40 @@
       with_items:
         # rdp
         - microsoft-remote-desktop-beta
+    - include_tasks: vid-term-dock-tasks.yml
+
+
+  vars:
+    #### Update personal information here
+    - computername: Vids-MacBook-Pro
+    - git_user_name: "Vid"
+    - git_user_email: "vid@paloalto.com"
+    #- php_version: 70
+    - dockitems_to_persist:
+      - name: "Firefox"
+        path: "'/Applications/Firefox\ Developer\ Edition.app'"
+        pos: 1
+      - name: "'Google\ Chrome'"
+        path: "'/Applications/Google\ Chrome.app'"
+        pos: 2
+      - name: "Safari"
+        path: "/Applications/Utilities/Safari.app.app"
+        pos: 3
+      - name: "Terminal"
+        path: "/Applications/Utilities/Terminal.app"
+        pos: 4
+      - name: "Atom"
+        path: "/Applications/Atom.app"
+        pos: 5
+      - name: "Mail"
+        path: "/Applications/Mail.app"
+        pos: 6
+      - name: "Calendar"
+        path: "/Applications/Calendar.app"
+        pos: 7
+    #- atom_packages:
+        # sync-settings http://atom.io/packages/sync-settings
 
 # chain vid.yml but set custom variables: computername, git user/email; and update sudo
-- include: vid-osx-defaults-only.yml computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com"
+- include: vid-osx-defaults-only.yml
+# computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com"
