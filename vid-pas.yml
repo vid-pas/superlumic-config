@@ -9,7 +9,8 @@
       with_items:
         # rdp
         - microsoft-remote-desktop-beta
-    - include_tasks: vid-term-dock-tasks.yml
+    - name: Include additional task list
+      include_tasks: vid-term-dock-tasks.yml
 
 
   vars:
