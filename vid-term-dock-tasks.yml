@@ -1,15 +1,15 @@
 - hosts: localhost
   tasks:
-    - name: add to sudoers without password
-      become: yes
-      lineinfile: >
-        dest=/etc/sudoers
-        regexp="{{ item.regexp }}"
-        line="{{ item.line }}"
-        state=present
-        create=true
-      with_items:
-        - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
+    #- name: add to sudoers without password
+    #  become: yes
+    #  lineinfile: >
+    #    dest=/etc/sudoers
+    #    regexp="{{ item.regexp }}"
+    #    line="{{ item.line }}"
+    #    state=present
+    #    create=true
+    #  with_items:
+    #    - { regexp: '^vid', line: 'vid ALL=(ALL) NOPASSWD: ALL' }
     - name: Remove all cruft from Dock
       shell: dockutil --remove all
     - name: Check if items in dock exist
