@@ -27,7 +27,7 @@
         path: "'/Applications/Google\ Chrome.app'"
         pos: 2
       - name: "Safari"
-        path: "/Applications/Utilities/Safari.app.app"
+        path: "/Applications/Safari.app"
         pos: 3
       - name: "Terminal"
         path: "/Applications/Utilities/Terminal.app"
@@ -45,5 +45,4 @@
         # sync-settings http://atom.io/packages/sync-settings
 
 # chain vid.yml but set custom variables: computername, git user/email; and update sudo
-- include: vid-osx-defaults-only.yml
-# computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com"
+- include: vid-osx-defaults-only.yml computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com"
