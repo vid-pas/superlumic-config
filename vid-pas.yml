@@ -8,6 +8,7 @@
       ignore_errors: yes
       with_items:
         # rdp
+        - firefoxdeveloperedition
         - microsoft-remote-desktop-beta
         - google-chrome
         - atom
