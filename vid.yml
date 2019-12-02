@@ -79,8 +79,8 @@
         # java
         #- java
         # local dev docker container
-        - kalabox
-        - lando
+        #- kalabox
+        #- lando
         # music
         #- amazon-music
         # office

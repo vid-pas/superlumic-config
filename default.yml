@@ -181,7 +181,7 @@
         value: true
       # finder- search "When performing a search, search the current folder by default"
       - domain: 'com.apple.finder'
-        key 'FXDefaultSearchScope'
+        key: 'FXDefaultSearchScope'
         type: string
         value: "SCcf"
       # Use Keyboard - Use all F1, F@, etc. keys as standard functions keys defaults write -g com.apple.keyboard.fnState -bool true
