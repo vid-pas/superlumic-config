@@ -60,14 +60,14 @@
         - onyx
         # quicklook plugins
         - animated-gif-quicklook
-        - qlcolorcode
-        - qlstephen
-        - qlmarkdown
-        - quicklook-json
-        - qlprettypatch
-        - quicklook-csv
-        - betterzip
-        - webpquicklook
+        #- qlcolorcode
+        #- qlstephen
+        #- qlmarkdown
+        #- quicklook-json
+        #- qlprettypatch
+        #- quicklook-csv
+        #- betterzip
+        #- webpquicklook
         #misc
         #- dropbox
         #- hazel
