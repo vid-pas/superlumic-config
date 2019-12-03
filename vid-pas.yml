@@ -2,7 +2,10 @@
 # chain vid.yml but set custom variables: computername, git user/email; and update sudo
 # Usage:
 ## curl https://raw.githubusercontent.com/vid-n3t/superlumic/master-vid/superlumic | bash -s https://github.com/vid-pas/superlumic-config.git vid-pas
-
+#
 # - include: default.yml computername=Vids-MBP-5 git_user_name="vid" git_user_email="vid@paloalto.com" preferred_shell=bashlatest
+#
+# Note: if this is a custom (non git-tracked) yml file then you'll want to copy it to the appropriate directory
+# cp vid-pas.yml /usr/local/superlumic/config/
 
 - include: vid.yml computername=Vids-MacBook-Pro git_user_name="vid" git_user_email="vid@paloalto.com" preferred_shell=bashlatest
