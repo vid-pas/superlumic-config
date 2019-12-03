@@ -45,7 +45,8 @@
         - synergy
         # development
         - docker
-        - mamp
+        - kitematic
+        #- mamp
         # happy eyes
         - flux
         # java
