@@ -27,8 +27,6 @@
         # browsers
         - firefox
         - google-chrome
-        # chat
-        - adium
         # code
         - atom
         # communication
