@@ -55,6 +55,8 @@
         - docker
         - kitematic
         #- mamp
+        - virtualbox
+        - vagrant
         # happy eyes
         - flux
         # java
@@ -68,7 +70,7 @@
         # tools
         - onyx
         # quicklook plugins
-        - animated-gif-quicklook
+        #- animated-gif-quicklook
         #- qlcolorcode
         #- qlstephen
         #- qlmarkdown
