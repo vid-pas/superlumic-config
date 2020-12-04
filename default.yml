@@ -61,6 +61,7 @@
         - flux
         # java
         #- java
+        - adoptopenjdk
         # music
         #- amazon-music
         # office
@@ -91,6 +92,7 @@
         #- omnigraffle
         #- sketch
         - suspicious-package
+        - screaming-frog-seo-spider
 
 
     - name: create ssh directory
